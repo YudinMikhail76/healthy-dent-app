@@ -1,0 +1,643 @@
+// 2 фото в 2 стовпичики на всю ширину + підписи
+:deep(.template--2-photos-text-row__inner) {
+    @media (min-width: $tablet-breakpoint) {
+        display: flex;
+        gap: 24px;
+    }
+}
+
+:deep(.template--2-photos-text-row__col) {
+    @include mixin-spacer-margin-middle;
+
+    @media (min-width: $tablet-breakpoint) {
+        width: 50%;
+    }
+}
+
+:deep(.template--2-photos-text-row__image-wrap) {
+    height: 240px;
+
+    @include mixin-spacer-margin-micro;
+
+    @media (min-width: $desktop-breakpoint) {
+        height: 187px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        height: 306px;
+    }
+}
+
+:deep(.template--2-photos-text-row__image-wrap) img,
+:deep(.template--2-photos-text-row__image-wrap) iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+    border-radius: 7px;
+
+    @media (min-width: $tablet-breakpoint) {
+        border-radius: 10px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        border-radius: 12px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        border-radius: 15px;
+    }
+}
+
+:deep(.template--2-photos-text-row__image-wrap__text) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+// 2 фото в 2 стовпичики на всю ширину + підписи - END
+
+// Шаблон Цитата + автор
+:deep(.template--blockquote-with-author__inner) {
+    position: relative;
+    padding: 20px 20px 20px 60px;
+    background-color: $dark-100;
+    border-radius: 7px;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 30px 30px 30px 90px;
+        border-radius: 10px;
+    }
+    
+    @media (min-width: $desktop-breakpoint) {
+        padding: 40px 40px 40px 120px;
+        border-radius: 12px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 48px 48px 48px 144px;
+        border-radius: 15px;
+    }
+}
+
+:deep(.template--blockquote-with-author__inner::before) {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjY2NjcgOS4xNjY2N0MxMS42NjY3IDUuNDkgMTQuNjU2NyAyLjUgMTguMzMzMyAyLjVDMTkuMjU1IDIuNSAyMCAzLjI0NSAyMCA0LjE2NjY3QzIwIDUuMDg4MzMgMTkuMjU1IDUuODMzMzMgMTguMzMzMyA1LjgzMzMzQzE2LjQ5NSA1LjgzMzMzIDE1IDcuMzI4MzMgMTUgOS4xNjY2N0gxNy41QzE4Ljg4IDkuMTY2NjcgMjAgMTAuMjg2NyAyMCAxMS42NjY3VjE0LjE2NjdDMjAgMTYuMDA4MyAxOC41MDgzIDE3LjUgMTYuNjY2NyAxNy41SDE0LjE2NjdDMTIuNzg2NyAxNy41IDExLjY2NjcgMTYuMzggMTEuNjY2NyAxNVY5LjE2NjY3Wk0wIDkuMTY2NjdDMCA1LjQ5IDIuOTkgMi41IDYuNjY2NjcgMi41QzcuNTg4MzMgMi41IDguMzMzMzMgMy4yNDUgOC4zMzMzMyA0LjE2NjY3QzguMzMzMzMgNS4wODgzMyA3LjU4ODMzIDUuODMzMzMgNi42NjY2NyA1LjgzMzMzQzQuODI4MzMgNS44MzMzMyAzLjMzMzMzIDcuMzI4MzMgMy4zMzMzMyA5LjE2NjY3SDUuODMzMzNDNy4yMTMzMyA5LjE2NjY3IDguMzMzMzMgMTAuMjg2NyA4LjMzMzMzIDExLjY2NjdWMTQuMTY2N0M4LjMzMzMzIDE2LjAwODMgNi44NDE2NyAxNy41IDUgMTcuNUgyLjVDMS4xMiAxNy41IDAgMTYuMzggMCAxNVY5LjE2NjY3WiIgZmlsbD0iIzFEQjBBOSIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: $tablet-breakpoint) {
+        top: 30px;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        top: 40px;
+        left: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        top: 48px;
+        left: 48px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+:deep(.template--blockquote-with-author__text) {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-bottom: 48px;
+        font-size: 32px;
+    }
+}
+
+:deep(.template--blockquote-with-author__author-block) {
+    width: 50%;
+    margin-left: auto;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 140%;
+    text-align: right;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+:deep(.template--blockquote-with-author__author) {
+    margin-bottom: 5px;
+    font-weight: 700;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: 10px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-bottom: 12px;
+    }
+}
+
+:deep(.template--blockquote-with-author__position) {
+    font-weight: 400;
+    color: $primary-300;
+}
+
+// Шаблон Цитата + автор END
+
+// Шаблон Показання / протипоказання - 2 колонки
+:deep(.template--indications-contraindications__inner) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+        gap: 48px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        gap: 64px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        gap: 96px;
+    }
+}
+
+:deep(.template--indications-contraindications__text),
+:deep(.template--indications-contraindications__list-item) {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 140%;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+:deep(.template--indications-contraindications__indications),
+:deep(.template--indications-contraindications__contraindications) {
+    @media (min-width: $tablet-breakpoint) {
+        width: 50%;
+    }
+}
+
+:deep(.template--indications-contraindications__title) {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 28px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 32px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 48px;
+    }
+}
+
+:deep(.template--indications-contraindications__text) {
+    font-weight: 700;
+
+    @include mixin-spacer-margin-middle;
+}
+
+:deep(.template--indications-contraindications__list) {
+    padding-top: 20px;
+    margin-bottom: 0;
+    border-top: 1px solid $secondary-100;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding-top: 30px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding-top: 40px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding-top: 48px;
+    }
+}
+
+:deep(.template--indications-contraindications__list-item) {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-left: 30px;
+    gap: 12px;
+    font-weight: 400;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding-left: 32px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding-left: 36px;
+    }
+}
+
+:deep(.template--indications-contraindications__list-item):not(:last-child) {
+    margin-bottom: 5px;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: 10px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-bottom: 12px;
+    }
+}
+
+:deep(.template--indications-contraindications__list-item)::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 3px;
+    display: inline-block;
+    height: 18px;
+    min-width: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: $tablet-breakpoint) {
+        height: 20px;
+        max-width: 20px;
+        min-width: 20px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        height: 22px;
+        max-width: 22px;
+        min-width: 22px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        height: 24px;
+        max-width: 24px;
+        min-width: 24px;
+    }
+}
+
+:deep(.template--indications-contraindications__list-item).success::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9InBvYy0wMS9VIj4KPHBhdGggaWQ9IkxpbmUiIGQ9Ik0xNC4yNSA1LjI1TDcuMjUgMTIuNzVMMy43NSA5IiBzdHJva2U9IiMxREIwQTkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPC9zdmc+Cg==');
+}
+
+:deep(.template--indications-contraindications__list-item).danger::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMjg4MjUgNS4yODgyNUwxMi43MTE3IDEyLjcxMTdNMTQuMjUgOUMxNC4yNSAxMS44OTk1IDExLjg5OTUgMTQuMjUgOSAxNC4yNUM2LjEwMDUxIDE0LjI1IDMuNzUgMTEuODk5NSAzLjc1IDlDMy43NSA2LjEwMDUxIDYuMTAwNTEgMy43NSA5IDMuNzVDMTEuODk5NSAzLjc1IDE0LjI1IDYuMTAwNTEgMTQuMjUgOVoiIHN0cm9rZT0iI0ZDQTVBNSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==');
+}
+
+// Шаблон Показання / протипоказання - 2 колонки END
+
+// Шаблон посилання-теги - 2 колонки
+:deep(.template--link-tags__inner) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+        gap: 48px;
+    }
+}
+
+:deep(.template--link-tags__col) {
+    width: 100%;
+}
+
+:deep(.template--link-tags__title) {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: 30px;
+    }
+    
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-bottom: 48px;
+        font-size: 24px;
+    }
+}
+
+:deep(.template--link-tags__tags) {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+:deep(.template--link-tags__link-element) {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $light;
+    border: 1.5px solid $secondary-100;
+    border-radius: 6px;
+    transition: color $base-ui-transition, background-color $base-ui-transition;
+}
+
+@media (any-hover: hover) {
+    :deep(.template--link-tags__link-element):hover {
+        color: $light;
+        background-color: $primary-300;
+    }
+
+    :deep(.template--link-tags__link-element):hover a {
+        color: $light;
+    }
+}
+
+:deep(.template--link-tags__link) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 6px 8px;
+    margin: 0;
+    font-family: $main-font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    color: $dark-500;
+    text-decoration: none;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 6px 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding: 7px 14px 8px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 9px 16px 11px;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+}
+
+:deep(.template--link-tags__link)::after {
+    display: none;
+}
+
+:deep(.template--doctor-specialization-item) {
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-radius: 7px;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        display: flex;
+        margin-bottom: 10px;
+        border-radius: 12px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        display: flex;
+        margin-bottom: 12px;
+        border-radius: 15px;
+    }
+}
+
+:deep(.template--doctor-specialization-item__inner) {
+    @media (min-width: $desktop-breakpoint) {
+        display: flex;
+        width: 50%;
+    }
+}
+
+:deep(.template--doctor-specialization-item__block) {
+    display: flex;
+    padding: 10px;
+    background-color: $dark-100;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 15px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        width: 100%;
+        padding: 20px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 24px;
+    }
+}
+
+:deep(.template--doctor-specialization-item__block-left) {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    @media (min-width: $tablet-breakpoint) {
+        gap: 15px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        gap: 20px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        gap: 24px;
+    }
+}
+
+:deep(.template--doctor-specialization-item__block-right) {
+    @media (min-width: $desktop-breakpoint) {
+        align-items: end;
+    }
+}
+
+:deep(.template--doctor-specialization-item__divider) {
+    width: 100%;
+    height: 0;
+
+    @media (min-width: $desktop-breakpoint) {
+        width: 0;
+        height: 100%;
+    }
+}
+
+:deep(.template--doctor-specialization-item__divider-top) {
+    border-top: 9px solid $dark-100;
+    border-right: 10px solid $light;
+    border-left: 10px solid $light;
+
+    @media (min-width: $desktop-breakpoint) {
+        border-top: 10px solid $light;
+        border-right: none;
+        border-bottom: 10px solid $light;
+        border-left: 9px solid $dark-100;
+    }
+}
+
+:deep(.template--doctor-specialization-item__divider-center) {
+    position: relative;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: rgba($dark-200, .4);
+
+    @media (min-width: $desktop-breakpoint) {
+        top: 10px;
+        left: 0;
+        width: 2px;
+        height: auto;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background-color: $light;
+        }
+    }
+}
+
+:deep(.template--doctor-specialization-item__divider-bottom) {
+    border-right: 10px solid $light;
+    border-bottom: 9px solid $dark-100;
+    border-left: 10px solid $light;
+
+    @media (min-width: $desktop-breakpoint) {
+        border-top: 10px solid $light;
+        border-right: 9px solid $dark-100;
+        border-bottom: 10px solid $light;
+        border-left: none;
+    }
+}
+
+:deep(.template--doctor-specialization-item__number) {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    span {
+        margin-right: 5px;
+        color: $dark-200;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+:deep(.template--doctor-specialization-item__title) {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 20px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 24px;
+    }
+}
+
+:deep(.template--doctor-specialization-item__text) {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}

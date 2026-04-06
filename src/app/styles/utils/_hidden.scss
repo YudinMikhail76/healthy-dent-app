@@ -1,0 +1,55 @@
+.is-hidden {
+    display: none !important;
+}
+
+.is-mobile-hide {
+    @media (max-width: 719px) {
+        display: none !important;
+    }
+}
+
+.is-tablet-hide {
+    @media (max-width: 1279px) and (min-width: 720px) {
+        display: none !important;
+    }
+}
+
+.is-desktop-hide {
+    @media (min-width: 1280px) {
+        display: none !important;
+    }
+}
+
+.is-desktop-only {
+    @media (max-width: 1279px) {
+        display: none !important;
+    }
+}
+
+.is-fullhd-only {
+    @media (max-width: 1919px) {
+        display: none !important;
+    }
+}
+
+.is-fullhd-hide {
+    @media (min-width: 1920px) {
+        display: none !important;
+    }
+}
+
+.is-tablet-only {
+    @media (max-width: 719px), (min-width: 1280px) {
+        display: none !important;
+    }
+}
+
+.is-mobile-only {
+    @media (min-width: 720px) {
+        display: none !important;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}

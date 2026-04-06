@@ -1,0 +1,15 @@
+export default defineNitroPlugin((nitroApp) => {
+    nitroApp.hooks.hook('render:html', (html) => {
+        const { head } = html
+        const headReplacement = head.map((h) => {
+            // optimize css load, avoid blocking render
+            return h.replaceAll(
+                '<link rel="stylesheet"',
+                '<link rel="preload" as="style" onload="this.rel=\'stylesheet\'"'
+            )
+        })
+
+        html.head.length = 0
+        html.head = headReplacement
+    })
+})

@@ -1,0 +1,559 @@
+:deep(*:first-child) {
+    margin-top: 0;
+}
+
+:deep(h1),
+:deep(h2),
+:deep(h3),
+:deep(h4),
+:deep(h5),
+:deep(h6) {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+    color: $dark-500;
+}
+
+:deep(h1),
+:deep(h2) {
+    margin-top: 48px;
+    font-size: 32px;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 40px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-top: 56px;
+        font-size: 40px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 48px;
+    }
+}
+
+:deep(h3) {
+    margin: 40px 0 32px;
+    font-size: 24px;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-top: 40px;
+        font-size: 28px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-top: 48px;
+        font-size: 32px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 48px;
+    }
+}
+
+:deep(h4) {
+    margin: 32px 0;
+    font-size: 20px;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 22px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-top: 40px;
+        font-size: 24px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 32px;
+    }
+}
+
+:deep(h5),
+:deep(h6) {
+    margin: 28px 0 32px;
+    font-size: 16px;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-top: 32px;
+        font-size: 20px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 24px;
+    }
+}
+
+:deep(p) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include mixin-spacer-margin-middle;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+:deep(em) {
+    font-style: italic;
+}
+
+:deep(strong),
+:deep(b) {
+    font-weight: 900;
+}
+
+:deep(u) {
+    text-decoration: underline;
+}
+
+:deep(a) {
+    position: relative;
+    display: inline-block;
+    margin: 8px 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    color: $primary-500;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $primary-600;
+
+            &::after {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        background-color: $primary-500;
+        opacity: 1;
+        transition: $base-ui-transition ease;
+    }
+}
+
+:deep(img) {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    filter: grayscale(.4);
+    border-radius: 7px;
+
+    @include mixin-spacer-margin-middle;
+
+    @media (min-width: $tablet-breakpoint) {
+        height: 450px;
+        border-radius: 10px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        height: 384px;
+        margin-bottom: 24px;
+        border-radius: 12px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        height: 624px;
+    }
+}
+
+:deep(ul), 
+:deep(ol) {
+    @include mixin-spacer-margin-middle;
+}
+
+:deep(ul li),
+:deep(ol li) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; 
+    color: $dark-500;
+
+    @include mixin-spacer-margin-micro;
+    
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+}
+
+:deep(ul li:last-child),
+:deep(ol li:last-child) {
+    margin-bottom: 0;
+}
+
+:deep(ul li) {
+    position: relative;
+    padding-left: 14px;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding-left: 21px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding-left: 28px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding-left: 34px;
+    }
+}
+
+:deep(ul li ul),
+:deep(ol li ol) {
+    margin-top: 8px;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-top: 12px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-top: 16px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-top: 24px;
+    }
+}
+
+:deep(ul li::before) {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMiA2QzAuODk1NDMxIDYgMCA1LjEwNDU3IDAgNFYyQzAgMC44OTU0MzEgMC44OTU0MzEgMCAyIDBINEM1LjEwNDU3IDAgNiAwLjg5NTQzMSA2IDJWNEM2IDUuMTA0NTcgNS4xMDQ1NyA2IDQgNkgyWiIgZmlsbD0iIzFEQjBBOSIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @media (min-width: $tablet-breakpoint) {
+        top: 7px;
+        width: 6px;
+        height: 6px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        top: 9px;
+        width: 8px;
+        height: 8px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        top: 10px;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+:deep(ol) {
+    list-style: none;
+    counter-reset: counter-with-zero;
+}
+
+:deep(ol li) {
+    position: relative;
+    padding-left: 24px;
+    counter-increment: counter-with-zero;
+    
+    @media (min-width: $tablet-breakpoint) {
+        padding-left: 36px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding-left: 48px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding-left: 58px;
+    }
+}
+
+:deep(ul li a),
+:deep(ol li a)  {
+    margin-top: 0;
+}
+
+:deep(ol li::before) {
+    content: counter(counter-with-zero, decimal-leading-zero);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; 
+    color: $primary-500;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        font-size: 20px;
+    }
+}
+
+:deep(hr) {
+    border: 1px solid $secondary-100;
+}
+
+:deep(table th) {
+    position: relative;
+    padding: 8px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    color: $dark-500;
+    text-align: left;
+    letter-spacing: .8px;
+    vertical-align: middle;
+    background: $secondary-100;
+    border: 2px solid $light;
+    border-radius: 6px;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding: 14px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 16px;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: $secondary-100;
+
+        @media (min-width: $tablet-breakpoint) {
+            width: 16px;
+            height: 16px;
+        }
+    
+        @media (min-width: $desktop-breakpoint) {
+            width: 18px;
+            height: 18px;
+        }
+    
+        @media (min-width: $lg-desktop-breakpoint) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+:deep(table tbody tr td):first-child::after {
+    right: 16px;
+    left: 0;
+}
+
+:deep(table tbody tr td):last-child::after {
+    right: 0;
+    left: 16px;
+}
+
+:deep(table tbody tr td):not(:first-child):not(:last-child)::after {
+    right: 8px;
+    left: 8px;
+}
+
+:deep(table tbody td::after) {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background-color: $secondary-100;
+}
+
+:deep(table tbody td) {
+    position: relative;
+    padding: 8px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    background-color: $light;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        padding: 14px;
+        font-size: 18px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 16px;
+        font-size: 20px;
+    }
+}
+
+:deep(table tbody tr:last-child td::after) {
+    background: none;
+}
+
+:deep(table) {
+    width: 100%;
+    border-collapse: collapse;
+
+    @include mixin-spacer-margin-middle;
+}
+
+:deep(table td p:last-child) {
+    margin: 0;
+}
+
+:deep(blockquote p),
+:deep(blockquote span) {
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+:deep(blockquote p) {
+    margin-bottom: 0;
+}
+
+:deep(blockquote) {
+    position: relative;
+    padding: 20px 20px 20px 60px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    background-color: $dark-100;
+    border-radius: 7px;
+
+    @include mixin-spacer-margin-big;
+
+    @media (min-width: $tablet-breakpoint) {
+        padding: 30px 30px 30px 90px;
+        font-size: 24px;
+        border-radius: 10px;
+    }
+    
+    @media (min-width: $desktop-breakpoint) {
+        padding: 40px 40px 40px 120px;
+        font-size: 28px;
+        border-radius: 12px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        padding: 48px 48px 48px 144px;
+        font-size: 32px;
+        border-radius: 15px;
+    }
+}
+
+:deep(blockquote::before) {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjY2NjcgOS4xNjY2N0MxMS42NjY3IDUuNDkgMTQuNjU2NyAyLjUgMTguMzMzMyAyLjVDMTkuMjU1IDIuNSAyMCAzLjI0NSAyMCA0LjE2NjY3QzIwIDUuMDg4MzMgMTkuMjU1IDUuODMzMzMgMTguMzMzMyA1LjgzMzMzQzE2LjQ5NSA1LjgzMzMzIDE1IDcuMzI4MzMgMTUgOS4xNjY2N0gxNy41QzE4Ljg4IDkuMTY2NjcgMjAgMTAuMjg2NyAyMCAxMS42NjY3VjE0LjE2NjdDMjAgMTYuMDA4MyAxOC41MDgzIDE3LjUgMTYuNjY2NyAxNy41SDE0LjE2NjdDMTIuNzg2NyAxNy41IDExLjY2NjcgMTYuMzggMTEuNjY2NyAxNVY5LjE2NjY3Wk0wIDkuMTY2NjdDMCA1LjQ5IDIuOTkgMi41IDYuNjY2NjcgMi41QzcuNTg4MzMgMi41IDguMzMzMzMgMy4yNDUgOC4zMzMzMyA0LjE2NjY3QzguMzMzMzMgNS4wODgzMyA3LjU4ODMzIDUuODMzMzMgNi42NjY2NyA1LjgzMzMzQzQuODI4MzMgNS44MzMzMyAzLjMzMzMzIDcuMzI4MzMgMy4zMzMzMyA5LjE2NjY3SDUuODMzMzNDNy4yMTMzMyA5LjE2NjY3IDguMzMzMzMgMTAuMjg2NyA4LjMzMzMzIDExLjY2NjdWMTQuMTY2N0M4LjMzMzMzIDE2LjAwODMgNi44NDE2NyAxNy41IDUgMTcuNUgyLjVDMS4xMiAxNy41IDAgMTYuMzggMCAxNVY5LjE2NjY3WiIgZmlsbD0iIzFEQjBBOSIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: $tablet-breakpoint) {
+        top: 30px;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        top: 40px;
+        left: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        top: 48px;
+        left: 48px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+:deep(.ck-image-cover) {
+    object-fit: cover !important;
+    height: auto !important;
+}
+ 
+:deep(.ck-image-contain) {
+    object-fit: contain !important;
+}

@@ -1,0 +1,47 @@
+@mixin spacer($height, $tablet-height, $desktop-height, $lg-desktop-height) {
+    height: $height;
+
+    @media (min-width: $tablet-breakpoint) {
+        height: $tablet-height;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        height: $desktop-height;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        height: $lg-desktop-height;
+    }
+}
+
+@mixin spacer-margin($margin, $tablet-margin, $desktop-margin, $lg-desktop-margin) {
+    margin-bottom: $margin;
+
+    @media (min-width: $tablet-breakpoint) {
+        margin-bottom: $tablet-margin;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: $desktop-margin;
+    }
+
+    @media (min-width: $lg-desktop-breakpoint) {
+        margin-bottom: $lg-desktop-margin;
+    }
+}
+
+@mixin mixin-spacer-margin-big {
+    @include spacer-margin(32px, 32px, 32px, 48px);
+}
+
+@mixin mixin-spacer-margin-middle {
+    @include spacer-margin(20px, 24px, 28px, 32px);
+}
+
+@mixin mixin-spacer-margin-small {
+    @include spacer-margin(14px, 20px, 24px, 32px);
+}
+
+@mixin mixin-spacer-margin-micro {
+    @include spacer-margin(8px, 12px, 16px, 24px);
+}

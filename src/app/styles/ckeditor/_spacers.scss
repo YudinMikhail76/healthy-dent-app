@@ -1,0 +1,15 @@
+:deep(.spacer--big) {
+    @include spacer(32px, 48px, 64px, 96px);
+}
+
+:deep(.spacer--middle) {
+    @include spacer(24px, 32px, 48px, 64px);
+}
+
+:deep(.spacer--small) {
+    @include spacer(14px, 20px, 24px, 32px);
+}
+
+:deep(.spacer--micro) {
+    @include spacer(8px, 12px, 16px, 24px);
+}

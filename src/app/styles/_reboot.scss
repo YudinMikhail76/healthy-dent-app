@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+*:not(input):focus-visible,
+*:not(textarea):focus-visible {
+    box-shadow: 0 0 0 3px $primary-400;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: $light;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-500;
+}
+
+body {
+    min-height: 100vh;
+    font-family: $main-font, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $dark-500;
+    word-break: break-word;
+    word-wrap: break-word;
+    background-color: $secondary-100;
+}
+
+a {
+    width: fit-content;
+    font-weight: 700;
+    color: $primary-600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+sup {
+    font-size: smaller;
+    vertical-align: super;
+}
+
+ul {
+    list-style: none;
+}
