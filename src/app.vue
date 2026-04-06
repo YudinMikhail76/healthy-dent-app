@@ -4,7 +4,7 @@
         <img
             style="position: fixed;left: 3vw;z-index: -1;width: 92vw;height: 110vh;pointer-events: none;user-select: none;"
             loading="eager"
-            src="/shared/assets/images/banner-push.webp"
+            :src="bannerPushWebp"
             alt="logo"
             fetchpriority="high"
         >
@@ -29,9 +29,11 @@ import AppToast from './shared/ui/Toast/AppToast.vue'
 import ModalsList from './entities/modals/ModalsList.vue'
 
 import { renderCompanyAdInConsole } from './shared/constants'
-import { generateGtmNoScript, generateGtmStartScript } from '~/shared/utils/marketing/scripts'
+import { generateGtmNoScript, generateGtmDeferredScript } from '~/shared/utils/marketing/scripts'
 import { waitForBinotelAndReplacePhones } from './shared/utils/binotelHelpers'
 import manropeFontWoff2 from '@/app/fonts/manrope/Manrope-Regular.woff2'
+import manropeBoldFontWoff2 from '@/app/fonts/manrope/Manrope-Bold.woff2'
+import bannerPushWebp from '@/shared/assets/images/banner-push.webp'
 import { scrollController } from './shared/utils/scrollController'
 import type { IStaticData } from './shared/interfaces/staticData'
 
@@ -84,13 +86,36 @@ useHead({
     link: [
         {
             rel: 'preload',
+            href: bannerPushWebp,
+            as: 'image',
+            type: 'image/webp',
+            fetchpriority: 'high'
+        },
+        {
+            rel: 'preload',
             href: manropeFontWoff2,
             crossorigin: '',
             as: 'font',
             type: 'font/woff2'
+        },
+        {
+            rel: 'preload',
+            href: manropeBoldFontWoff2,
+            crossorigin: '',
+            as: 'font',
+            type: 'font/woff2'
+        },
+        {
+            rel: 'preconnect',
+            href: 'https://admin.healthydent.ua',
+            crossorigin: ''
+        },
+        {
+            rel: 'preconnect',
+            href: 'https://www.googletagmanager.com'
         }
     ],
-    script: [generateGtmStartScript()],
+    script: [generateGtmDeferredScript()],
     noscript: [generateGtmNoScript()]
 })
 

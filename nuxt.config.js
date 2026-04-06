@@ -15,17 +15,9 @@ export default defineNuxtConfig({
             for (const item of Object.values(manifest)) {
                 item.dynamicImports = []
                 item.prefetch = false
-                item.preload = false
-
-                // find the app entry and remove it
-                if (item.isEntry && item.css) {
-                    // Start from the end of the array and work backwards
-                    for (let i = item.css.length - 1; i >= 0; i--) {
-                        // eslint-disable-next-line
-                        if (item.css[i].startsWith('entry')) {
-                            item.css.splice(i, 1)
-                        }
-                    }
+                // Keep preload for entry assets (fonts, hero image), disable for chunks
+                if (!item.isEntry) {
+                    item.preload = false
                 }
             }
         }
