@@ -1,24 +1,32 @@
 <template>
-    <div class="app-video">
+    <div ref="videoContainer" class="app-video">
         <video
             v-if="type === 'regular'"
+            ref="videoEl"
             class="app-video__video"
-            autoplay 
-            playsinline 
+            playsinline
             loop
             muted
+            preload="none"
         >
-            <slot />
+            <template v-if="isVisible">
+                <slot />
+            </template>
         </video>
-        <iframe 
-            v-else-if="src" 
-            :src="getYoutubeUrl(src)" 
-            class="app-video__video" 
+        <iframe
+            v-else-if="src"
+            :src="getYoutubeUrl(src)"
+            class="app-video__video"
+            loading="lazy"
         />
     </div>
 </template>
 
 <script setup>
+const videoContainer = ref(null)
+const videoEl = ref(null)
+const isVisible = ref(false)
+
 const props = defineProps({
     type: {
         type: String,
@@ -31,6 +39,23 @@ const props = defineProps({
         required: false,
         default: ''
     }
+})
+
+onMounted(() => {
+    if (!videoContainer.value || props.type !== 'regular') return
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            isVisible.value = true
+            nextTick(() => {
+                videoEl.value?.load()
+                videoEl.value?.play().catch(() => {})
+            })
+            observer.disconnect()
+        }
+    }, { rootMargin: '200px' })
+
+    observer.observe(videoContainer.value)
 })
 
 function getYoutubeUrl(url) {

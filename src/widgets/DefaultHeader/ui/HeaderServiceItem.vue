@@ -6,7 +6,7 @@
                     :urls="item?.image?.urls"
                     :alt="item?.image?.alt"
                     :title="item?.image?.alt"
-                    :loading="lazyImage ? 'lazy' : null"
+                    loading="lazy"
                 />
             </div>
             <div class="service-item__text-block">
