@@ -83,6 +83,25 @@ useHead({
     htmlAttrs: {
         lang: () => locale.value
     },
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'Healthy Dent',
+                url: 'https://healthydent.ua',
+                inLanguage: ['uk-UA', 'ru-UA'],
+                publisher: {
+                    '@type': 'Organization',
+                    name: 'Healthy Dent',
+                    url: 'https://healthydent.ua'
+                }
+            })
+        },
+        generateGtmDeferredScript()
+    ],
+    noscript: [generateGtmNoScript()],
     link: [
         {
             rel: 'preload',
@@ -114,9 +133,7 @@ useHead({
             rel: 'preconnect',
             href: 'https://www.googletagmanager.com'
         }
-    ],
-    script: [generateGtmDeferredScript()],
-    noscript: [generateGtmNoScript()]
+    ]
 })
 
 nuxtApp.hook('page:finish', () => {

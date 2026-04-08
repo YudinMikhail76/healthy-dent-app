@@ -68,9 +68,47 @@ const props = defineProps({
 })
 
 const localePath = useLocalePath()
+const config = useRuntimeConfig()
+const route = useRoute()
 
 const isItemDisabled = (url) => !url
 const isItemLast = (index) => props.breadcrumbs.length === index + 1
+
+const breadcrumbJsonLd = computed(() => {
+    const siteUrl = config.public.SITE_URL
+    const items = [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Healthy Dent',
+            item: siteUrl + localePath('/')
+        }
+    ]
+
+    props.breadcrumbs.forEach((crumb, index) => {
+        items.push({
+            '@type': 'ListItem',
+            position: index + 2,
+            name: crumb.title,
+            ...(crumb.alias ? { item: siteUrl + localePath(crumb.alias) } : {})
+        })
+    })
+
+    return JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items
+    })
+})
+
+useHead({
+    script: [
+        {
+            type: 'application/ld+json',
+            children: breadcrumbJsonLd
+        }
+    ]
+})
 </script>
 
 <style scoped lang="scss">
