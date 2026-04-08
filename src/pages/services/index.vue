@@ -12,6 +12,7 @@ import { useStaticDataStore } from '~/entities/root/store/static-data-store'
 import { apiService } from '~/app/api'
 import { getQueries } from '~/shared/utils/queryHelper'
 import { returnAlternates } from '~/shared/utils/seo/alternates'
+import { returnBreadcrumbMarkup } from '~/shared/utils/seo/breadcrumbMarkup.js'
 import { returnOpenGraph } from '~/shared/utils/seo/openGraph.js'
 import { useConfig } from '~/shared/composables/useConfig'
 import { generateMetaUsers } from '~/shared/utils/seo/meta-users'
@@ -98,6 +99,9 @@ useHead({
         { rel: 'canonical', href: config.public.SITE_URL + data.value.response.metatags.canonical },
         ...returnAlternates(data.value.response.metatags)
     ],
+    script: [
+        { type: 'application/ld+json', children: returnBreadcrumbMarkup(data.value.response.metatags, route.path) }
+    ]
 })
 
 onBeforeRouteLeave(() => rootStore.RESET_PAGE_DATA())

@@ -22,6 +22,7 @@ import { useSimplifiedEnglishPageStore } from '~/views/SimplfiedEnglishPage/stor
 import { returnAlternates } from '~/shared/utils/seo/alternates'
 import { returnOpenGraph } from '~/shared/utils/seo/openGraph.js'
 import { returnOrganizationalMarkup } from '~/shared/utils/seo/organizationalMarkup.js'
+import { returnBreadcrumbMarkup } from '~/shared/utils/seo/breadcrumbMarkup.js'
 import { useConfig } from '~/shared/composables/useConfig'
 import { generateMetaUsers } from '~/shared/utils/seo/meta-users'
 import AppLangHiddenLinks from '~/shared/ui/Links/AppLangHiddenLinks'
@@ -117,6 +118,13 @@ function setToStore(restId, payload) {
     }
 }
 
+const headScripts = [
+    { type: 'application/ld+json', children: returnBreadcrumbMarkup(data.value.response.metatags, route.path) }
+]
+if (data.value.response.nid === 816) {
+    headScripts.push({ 'data-id': 'micromarkup-org', children: returnOrganizationalMarkup(staticDataStore, data.value.response.metatags), type: 'application/ld+json' })
+}
+
 useHead({
     title: data.value.response.metatags.head_title,
     meta: [
@@ -129,9 +137,7 @@ useHead({
         { rel: 'canonical', href: config.public.SITE_URL + data.value.response.metatags.canonical },
         ...returnAlternates(data.value.response.metatags)
     ],
-    ...data.value.response.nid === 816 && { script: [
-        { 'data-id': 'micromarkup-org', children: returnOrganizationalMarkup(staticDataStore, data.value.response.metatags), type: 'application/ld+json' }]
-    }
+    script: headScripts
 })
 
 onBeforeRouteLeave(() => rootStore.RESET_PAGE_DATA())

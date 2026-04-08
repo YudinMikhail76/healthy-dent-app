@@ -12,6 +12,7 @@ import { apiService } from '~/app/api'
 import { useContactsPageStore } from '~/views/ContactsPage/store/contacts-store'
 import { useRootStore } from '~/entities/root/store/root-store'
 import { returnAlternates } from '~/shared/utils/seo/alternates'
+import { returnBreadcrumbMarkup } from '~/shared/utils/seo/breadcrumbMarkup.js'
 import { returnOpenGraph } from '~/shared/utils/seo/openGraph.js'
 import { ERROR_REST_ID } from '~/shared/utils/pages'
 import { useConfig } from '~/shared/composables/useConfig'
@@ -91,6 +92,9 @@ useHead({
     link: [
         { rel: 'canonical', href: config.public.SITE_URL + data.value.response.metatags.canonical },
         ...returnAlternates(data.value.response.metatags)
+    ],
+    script: [
+        { type: 'application/ld+json', children: returnBreadcrumbMarkup(data.value.response.metatags, route.path) }
     ]
 })
 
