@@ -50,8 +50,8 @@ const onClick = () => emit('on-click')
 <style lang="scss" scoped>
 .button-icon {
     display: flex;
-    max-width: 40px;
-    min-width: 40px;
+    max-width: 40px !important;
+    min-width: 40px !important;
     min-height: 40px;
     padding: 5px;
     text-decoration: none;
