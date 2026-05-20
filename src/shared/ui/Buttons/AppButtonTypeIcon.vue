@@ -110,8 +110,8 @@ const onClick = () => emit('on-click')
 
         :deep(svg) {
             stroke: $dark-500;
-            width: 24px;
-            height: 24px;
+            width: 40px !important;
+            height: 40px !important;
         }
     }
 
