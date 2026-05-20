@@ -36,4 +36,11 @@ onBeforeUnmount(() => {
     flex-direction: column;
     min-height: 100vh;
 }
+
+
+.button-icon--right svg {
+    height: 42px !important;
+    width: 42px !important;
+}
+    
 </style>
