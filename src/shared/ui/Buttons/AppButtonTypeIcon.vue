@@ -121,8 +121,8 @@ const onClick = () => emit('on-click')
 
         :deep(svg) {
             stroke: $dark-500;
-            width: 20px;
-            height: 20px;
+            width: 40px !important;
+            height: 40px !important;
 
             @media (min-width: $tablet-breakpoint) {
                 width: 22px;
