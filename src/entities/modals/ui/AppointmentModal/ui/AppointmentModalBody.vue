@@ -48,7 +48,7 @@
       <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
 
        <select @change="handleServiceChange" id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
-          <option value="">Виберіть послугу</option>
+          <option value="">Виберіть послугу *</option>
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
           <option value="Хірургія">Хірургія</option>
