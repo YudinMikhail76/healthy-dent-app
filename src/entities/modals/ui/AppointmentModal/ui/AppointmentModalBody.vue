@@ -31,16 +31,16 @@
                     />
                 </div>
             </div>
-            <AppTextarea
-                id="comment"
-                :value="fields.message"
-                :label-text="$t('appointmentModal.message')"
-                :is-error="v$.message.$invalid && v$.message.$dirty"
-                :is-success="!v$.message.$error && v$.message.$dirty"
-                is-required-field
-                @on-input="handleInput($event, 'message')"
-                @on-change="validate('message')"
-            />
+           
+
+       <select id="comment" value={fields.message}>
+          <option value="Лікування зубів">Лікування зубів</option>
+          <option value="Чистка зубів">Чистка зубів</option>
+          <option value="Хірургія">Хірургія</option>
+          <option value="Протезування">Протезування</option>
+        </select>
+
+            
         </div>
         <div class="appointment-modal-body__bottom">
             <div class="appointment-modal-body__text">
