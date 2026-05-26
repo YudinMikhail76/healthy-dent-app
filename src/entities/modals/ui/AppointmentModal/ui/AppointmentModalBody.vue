@@ -83,7 +83,7 @@
 <script setup>
 import AppInput from '~/shared/ui/Form/AppInput.vue'
 import AppButton from '~/shared/ui/Buttons/AppButton.vue'
-//import AppTextarea from '~/shared/ui/Form/AppTextarea.vue'
+import AppTextarea from '~/shared/ui/Form/AppTextarea.vue'
 import useVuelidate from '@vuelidate/core'
 
 import { useAppointmentModalStore } from '~/entities/modals/ui/AppointmentModal/store/appointment-modal-store'
