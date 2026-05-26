@@ -68,6 +68,7 @@ const onClick = () => emit('on-click')
     position: relative;
     display: inline-block;
     min-width: 107px;
+    max-height: 50px;
     padding: 3px 18px 16px 8px;
     font-family: inherit;
     font-size: 14px;
@@ -130,7 +131,7 @@ const onClick = () => emit('on-click')
         content: '';
         position: absolute;
         right: 8px;
-        bottom: 3px;
+        bottom: 16px;
         width: 14px;
         height: 14px;
         background-color: $dark-500;
