@@ -149,12 +149,12 @@ const onClick = () => emit('on-click')
 
         @media (min-width: $desktop-breakpoint) {
             right: 12px;
-            bottom: 7px;
+            bottom: 16px;
         }
 
         @media (min-width: $lg-desktop-breakpoint) {
             right: 15px;
-            bottom: 10px;
+            bottom: 16px;
             width: 20px;
             height: 20px;
         }
