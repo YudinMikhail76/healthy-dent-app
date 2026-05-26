@@ -197,6 +197,9 @@ const handleSubmitClick = async () => {
 
 function handleServiceChange(event) {
   const selectedValue = event.target.value;
+
+  document.getElementById("comment").value = selectedValue;
+
   console.log('Selected value:', selectedValue);
 }
 
