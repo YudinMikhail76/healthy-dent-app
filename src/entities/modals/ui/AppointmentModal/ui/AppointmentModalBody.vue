@@ -2,7 +2,7 @@
     <div class="appointment-modal-body">
         <div class="appointment-modal-body__form">
             <div class="appointment-modal-body__form-wrap">
-                <div class="appointment-modal-body__input">
+                <div class="appointment-modal-body__input"> 
                     <AppInput
                         id="name"
                         :value="fields.name"
@@ -33,7 +33,7 @@
             </div>
            
         <label for="comment" class="app-input__label-text">Виберіть послугу</label>
-       <select id="comment">
+       <select id="comment" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
           <option value="Хірургія">Хірургія</option>
