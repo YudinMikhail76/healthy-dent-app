@@ -32,12 +32,18 @@
                 </div>
             </div>
            
-
-       <select id="comment" value={fields.message}>
+        <label for="comment" class="app-input__label-text">Виберіть послугу</label>
+       <select id="comment">
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
           <option value="Хірургія">Хірургія</option>
           <option value="Протезування">Протезування</option>
+          <option value="Імплантація">Імплантація</option>
+          <option value="Діагностика">Діагностика</option>
+          <option value="Лікування ясень">Лікування ясень</option>
+          <option value="Вирівнювання зубів">Вирівнювання зубів</option>
+          <option value="Ідеальна посмішка">Ідеальна посмішка</option>
+          <option value="Дитяча стоматологія">Дитяча стоматологія</option>
         </select>
 
             
