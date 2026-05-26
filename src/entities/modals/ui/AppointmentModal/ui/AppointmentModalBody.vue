@@ -39,13 +39,13 @@
                 :label-text="$t('appointmentModal.message')"
                 :is-error="v$.message.$invalid && v$.message.$dirty"
                 :is-success="!v$.message.$error && v$.message.$dirty"
-                is-required-field
                 @on-input="handleInput($event, 'message')"
-                @on-change="validate('message')"
             />
 
             
-            
+            <div class="app-textarea">
+                
+                <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
             
         
             
@@ -62,7 +62,7 @@
           <option value="Ідеальна посмішка">Ідеальна посмішка</option>
           <option value="Дитяча стоматологія">Дитяча стоматологія</option>
         </select>
-
+</div>
             
         </div>
         <div class="appointment-modal-body__bottom">
