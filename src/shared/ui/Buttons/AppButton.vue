@@ -74,7 +74,7 @@ const onClick = () => emit('on-click')
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 140%;
+    line-height: 32px;
     color: $dark-500;
     text-align: left;
     text-transform: uppercase;
