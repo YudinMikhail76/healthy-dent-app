@@ -31,10 +31,25 @@
                     />
                 </div>
             </div>
-           
-        <label for="comment" class="app-input__label-text">Виберіть послугу</label>
+
+
+<AppTextarea
+                id="comment"
+                :value="fields.message"
+                :label-text="$t('appointmentModal.message')"
+                :is-error="v$.message.$invalid && v$.message.$dirty"
+                :is-success="!v$.message.$error && v$.message.$dirty"
+                is-required-field
+                @on-input="handleInput($event, 'message')"
+                @on-change="validate('message')"
+            />
+
             
-       <select id="comment" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
+            
+            
+        <label for="modal-services-list" class="app-input__label-text">Виберіть послугу</label>
+            
+       <select id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
           <option value="Хірургія">Хірургія</option>
