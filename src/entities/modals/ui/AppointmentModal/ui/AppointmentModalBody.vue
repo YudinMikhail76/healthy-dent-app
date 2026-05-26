@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-
+<div style="display: none;">
 <AppTextarea
                 id="comment"
                 :value="fields.message"
@@ -41,14 +41,12 @@
                 :is-success="!v$.message.$error && v$.message.$dirty"
                 @on-input="handleInput($event, 'message')"
             />
-
+</div>
             
-            <div class="app-textarea">
+           
                 
-                <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
-            
-        
-            
+      <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
+
        <select @change="handleServiceChange" id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
           <option value="">Виберіть послугу</option>
           <option value="Лікування зубів">Лікування зубів</option>
@@ -62,9 +60,12 @@
           <option value="Ідеальна посмішка">Ідеальна посмішка</option>
           <option value="Дитяча стоматологія">Дитяча стоматологія</option>
         </select>
-</div>
+
             
         </div>
+
+
+        
         <div class="appointment-modal-body__bottom">
             <div class="appointment-modal-body__text">
                 {{ $t('appointmentModal.confirm') }}
@@ -209,6 +210,10 @@ function handleServiceChange(event) {
 </script>
 
 <style lang="scss" scoped>
+
+
+
+    
 .appointment-modal-body {
     &__form {
         display: flex;
