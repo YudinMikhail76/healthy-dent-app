@@ -47,9 +47,10 @@
             
             
             
-        <label for="modal-services-list" class="app-input__label-text">Виберіть послугу</label>
+        
             
-       <select id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
+       <select @change="handleServiceChange" id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
+          <option value="">Виберіть послугу</option>
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
           <option value="Хірургія">Хірургія</option>
@@ -191,6 +192,15 @@ const handleSubmitClick = async () => {
         handleSubmitError(error)
     }
 }
+
+
+
+function handleServiceChange(event) {
+  const selectedValue = event.target.value;
+  console.log('Selected value:', selectedValue);
+}
+
+    
 </script>
 
 <style lang="scss" scoped>
