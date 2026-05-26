@@ -33,6 +33,7 @@
             </div>
            
         <label for="comment" class="app-input__label-text">Виберіть послугу</label>
+            
        <select id="comment" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
           <option value="Лікування зубів">Лікування зубів</option>
           <option value="Чистка зубів">Чистка зубів</option>
@@ -67,7 +68,7 @@
 <script setup>
 import AppInput from '~/shared/ui/Form/AppInput.vue'
 import AppButton from '~/shared/ui/Buttons/AppButton.vue'
-import AppTextarea from '~/shared/ui/Form/AppTextarea.vue'
+//import AppTextarea from '~/shared/ui/Form/AppTextarea.vue'
 import useVuelidate from '@vuelidate/core'
 
 import { useAppointmentModalStore } from '~/entities/modals/ui/AppointmentModal/store/appointment-modal-store'
