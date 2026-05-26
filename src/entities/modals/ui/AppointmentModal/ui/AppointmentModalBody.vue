@@ -200,6 +200,8 @@ function handleServiceChange(event) {
 
   document.getElementById("comment").value = selectedValue;
 
+    fields.value.message = selectedValue;
+
   console.log('Selected value:', selectedValue);
 }
 
