@@ -142,7 +142,7 @@ const onClick = () => emit('on-click')
 
         @media (min-width: $tablet-breakpoint) {
             right: 10px;
-            bottom: 5px;
+            bottom: 16px;
             width: 16px;
             height: 16px;
         }
