@@ -45,31 +45,31 @@
             
            
                 
-      <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
+      <label for="modal-services-list" class="app-textarea__label-text">{{ $t('appointmentModal.message') }}</label>
 
        <select @change="handleServiceChange" id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
            
-          <option value="">Виберіть послугу *</option>
+          <option value="">{{ $t('appointmentModal.selectService') }} *</option>
 
-           <option value="Діагностика">Діагностика</option>
+           <option value="{{ $t('appointmentModal.service1') }}">{{ $t('appointmentModal.service1') }}</option>
 
-           <option value="Лікування Зубів (карієс, пульпіт, мікроскоп)">Лікування Зубів (карієс, пульпіт, мікроскоп)</option>
+           <option value="{{ $t('appointmentModal.service2') }}">{{ $t('appointmentModal.service2') }}</option>
 
-           <option value="Хірургія (видалення, резекція, лазер)">Хірургія (видалення, резекція, лазер)</option>
+           <option value="{{ $t('appointmentModal.service3') }}">{{ $t('appointmentModal.service3') }}</option>
 
-           <option value="Імплантація">Імплантація</option>
+           <option value="{{ $t('appointmentModal.service4') }}">{{ $t('appointmentModal.service4') }}</option>
 
-           <option value="Протезування">Протезування</option>
+           <option value="{{ $t('appointmentModal.service5') }}">{{ $t('appointmentModal.service5') }}</option>
 
-           <option value="Вирівнювання зубів (брекети/елайнери/апарати/трейнери)">Вирівнювання зубів (брекети/елайнери/апарати/трейнери)</option>
+           <option value="{{ $t('appointmentModal.service6') }}">{{ $t('appointmentModal.service6') }}</option>
 
-           <option value="Чистка зубів">Чистка зубів</option>
+           <option value="{{ $t('appointmentModal.service7') }}">{{ $t('appointmentModal.service7') }}</option>
 
-           <option value="Ідеальна посмішка (вініри, відбілювання, художня реставрація)">Ідеальна посмішка (вініри, відбілювання, художня реставрація)</option>
+           <option value="{{ $t('appointmentModal.service8') }}">{{ $t('appointmentModal.service8') }}</option>
 
-           <option value="Лікування ясен">Лікування ясен</option>
+           <option value="{{ $t('appointmentModal.service9') }}">{{ $t('appointmentModal.service9') }}</option>
 
-           <option value="Дитяча стоматологія">Дитяча стоматологія</option>
+           <option value="{{ $t('appointmentModal.service10') }}">{{ $t('appointmentModal.service10') }}</option>
          
         </select>
 
