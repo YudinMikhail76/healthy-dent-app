@@ -48,17 +48,29 @@
       <label for="modal-services-list" class="app-textarea__label-text">Чим ми зможемо допомогти вам?</label>
 
        <select @change="handleServiceChange" id="modal-services-list" style="height: 40px; padding: 0 15px; font-size: 18px; border-radius: 10px;">
+           
           <option value="">Виберіть послугу *</option>
-          <option value="Лікування зубів">Лікування зубів</option>
-          <option value="Чистка зубів">Чистка зубів</option>
-          <option value="Хірургія">Хірургія</option>
-          <option value="Протезування">Протезування</option>
-          <option value="Імплантація">Імплантація</option>
-          <option value="Діагностика">Діагностика</option>
-          <option value="Лікування ясень">Лікування ясень</option>
-          <option value="Вирівнювання зубів">Вирівнювання зубів</option>
-          <option value="Ідеальна посмішка">Ідеальна посмішка</option>
-          <option value="Дитяча стоматологія">Дитяча стоматологія</option>
+
+           <option value="Діагностика">Діагностика</option>
+
+           <option value="Лікування Зубів (карієс, пульпіт, мікроскоп)">Лікування Зубів (карієс, пульпіт, мікроскоп)</option>
+
+           <option value="Хірургія (видалення, резекція, лазер)">Хірургія (видалення, резекція, лазер)</option>
+
+           <option value="Імплантація">Імплантація</option>
+
+           <option value="Протезування">Протезування</option>
+
+           <option value="Вирівнювання зубів (брекети/елайнери/апарати/трейнери)">Вирівнювання зубів (брекети/елайнери/апарати/трейнери)</option>
+
+           <option value="Чистка зубів">Чистка зубів</option>
+
+           <option value="Ідеальна посмішка (вініри, відбілювання, художня реставрація)">Ідеальна посмішка (вініри, відбілювання, художня реставрація)</option>
+
+           <option value="Лікування ясен">Лікування ясен</option>
+
+           <option value="Дитяча стоматологія">Дитяча стоматологія</option>
+         
         </select>
 
             
@@ -199,11 +211,11 @@ const handleSubmitClick = async () => {
 function handleServiceChange(event) {
   const selectedValue = event.target.value;
 
-  document.getElementById("comment").value = selectedValue;
+  //document.getElementById("comment").value = selectedValue;
 
-    fields.value.message = selectedValue;
+  fields.value.message = selectedValue;
 
-  console.log('Selected value:', selectedValue);
+  //console.log('Selected value:', selectedValue);
 }
 
     
